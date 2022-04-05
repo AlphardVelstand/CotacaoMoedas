@@ -6,7 +6,7 @@ import json
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PySide2.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_Form
-from PyQt5 import uic, QtWidgets
+#from PyQt5 import uic, QtWidgets
 
 cotacao_dollar = 0
 cotacao_euro = 0
