@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Consultar Cotação de Moedas</string>
   </property>
   <widget class="QPushButton" name="pushButtonAtualizar">
    <property name="geometry">
