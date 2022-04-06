@@ -2,10 +2,13 @@ import sys
 
 import requests
 import json
-
+import datetime
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PySide2.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_Form
+from datetime import datetime
+from datetime import date
+import time
 #from PyQt5 import uic, QtWidgets
 
 cotacao_dollar = 0
@@ -23,9 +26,15 @@ class MainWindow(QMainWindow, Ui_Form):
         self.pushButtonAtualizar.clicked.connect(pegar_cotacoes)
         self.pushButtonSair.clicked.connect(self.sair)
 
+        #atualizar()
 
     def sair(self):
         sys.exit()
+
+#while True:
+def atualizar():
+    time.sleep(5)
+    pegar_cotacoes()
 
 
 def pegar_cotacoes():
@@ -34,22 +43,30 @@ def pegar_cotacoes():
 
     requisicao_dic = requisicao.json()
 
-    #print(requisicao_dic)
+    # print(requisicao_dic)
 
     cotacao_dollar = requisicao_dic["USD"]["bid"]
     cotacao_euro = requisicao_dic['EUR']['bid']
     cotacao_bitcoin = requisicao_dic['BTC']['bid']
 
-    #print(f"EURO:{cotacao_euro}, \nDOLLAR{cotacao_dollar}, \nBITCOIN{cotacao_bitcoin}")
+    # print(f"EURO:{cotacao_euro}, \nDOLLAR{cotacao_dollar}, \nBITCOIN{cotacao_bitcoin}")
 
     texto = f'''
                 Euro: {cotacao_euro}
                 Dollar: {cotacao_dollar}
                 Bitcoin: {cotacao_bitcoin}'''
 
-    window.label_Resul_Dollar.setText(f"Dollar: " +cotacao_dollar)
-    window.label_Resul_Euro.setText(f"Euro: " +cotacao_euro)
-    window.label_Resul_Bitc.setText(f"Bitcoin: "+cotacao_bitcoin)
+    window.label_Resul_Dollar.setText(f"Dollar: " + cotacao_dollar)
+    window.label_Resul_Euro.setText(f"Euro: " + cotacao_euro)
+    window.label_Resul_Bitc.setText(f"Bitcoin: " + cotacao_bitcoin)
+
+    #Capturando a data e Convertendo para D/M/A
+    hoje = datetime.today()
+    #print(today_date)
+    printHoje = hoje.strftime("%d/%m/%Y %H:%M:%S")
+    #print(new_today_date)
+
+    window.labelTime.setText(f"Ultima Atualização: {printHoje}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

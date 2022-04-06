@@ -36,7 +36,7 @@ class Ui_Form(object):
 "}")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(50, 10, 311, 51))
+        self.label.setGeometry(QRect(40, 30, 311, 51))
         font1 = QFont()
         font1.setFamily(u"MV Boli")
         font1.setPointSize(15)
@@ -71,6 +71,9 @@ class Ui_Form(object):
         self.frame.setGeometry(QRect(30, 10, 331, 281))
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.labelTime = QLabel(self.frame)
+        self.labelTime.setObjectName(u"labelTime")
+        self.labelTime.setGeometry(QRect(0, 0, 331, 16))
         self.frame.raise_()
         self.pushButtonAtualizar.raise_()
         self.label.raise_()
@@ -92,5 +95,6 @@ class Ui_Form(object):
         self.label_Resul_Euro.setText(QCoreApplication.translate("Form", u"Euro", None))
         self.pushButtonSair.setText(QCoreApplication.translate("Form", u"Sair", None))
         self.label_Resul_Dollar.setText(QCoreApplication.translate("Form", u"Dollar", None))
+        self.labelTime.setText("")
     # retranslateUi
 

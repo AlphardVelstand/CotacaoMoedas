@@ -46,8 +46,8 @@ QPushButton:hover{
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>40</x>
+     <y>30</y>
      <width>311</width>
      <height>51</height>
     </rect>
@@ -164,6 +164,19 @@ QPushButton:hover{
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
+   <widget class="QLabel" name="labelTime">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <zorder>frame</zorder>
   <zorder>pushButtonAtualizar</zorder>
